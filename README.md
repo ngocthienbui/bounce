@@ -1,41 +1,75 @@
-# bounce
-Simple demonstrations of how you can setup a JavaScript library
-## Synopsis
+# Bounce
+Dit is een uitbreiding door Amer en Thien van de originele versie  js-library "Bounce" die door Luuk Derkx is gemaakt.
+## Korte inhoud
 
-A small library that can make a an element of your choosing bounce
+Een kleine library die de gekozen element kan laten bouncen (springen). 
 
-## Code Example
+## Oorspronkelijke code
 
-The easiest way to use bounce is putting it in a variable and calling the init function on it. It will than target the element with class bounce on it
+Het originele code wordt gebruikt in een Index.html file. Hier ziet u basisopzet met twee div elementen en een stukje code waarin je parameters kan aanroepen. 
 ```javascript
-//Initialize the first object without params so the default values are used
-var bounce = Bounce();
-bounce.init();
+<!-- Een voorbeeld waarin twee bounce elementen worden gemaakt -->
+<div id='bounceContainer'>
+    <div class='bounce1'>
+        bounce element 1
+    </div>
+    <div class='bounce2'>
+        bounce element 2
+    </div>
+</div>
+
+<script>
+    //hierin worden de elementen gekoppeld aan de javascript functies
+    var bounce1 = new Bounce();
+    bounce1.init('bounce1');
+    
+    var bounce2 = new Bounde();
+    bounce2.init('bounce2');
+</script>
 ```
 
-If you want however you can use a custom selector and change the gravity and the update speed using a settings object
-```javascript
-//Initialize the second object with a different selector and a gravity of only to so it goes...much...slower
-var bounce2 = Bounce();
-bounce2.init('.bounce2', {gravity: 2, updateSpeed:2});
-```
 
-## Demo
+## Oorspronkelijke demo
 See bounce [demo](http://i874261.iris.fhict.nl/s4/bounce/demo)
 
-## Motivation
+## Oorspronkelijke functies
 
-This library was created as a small example on how you can create a library
+In deze library waren de volgende functies beschikbaar waarmee je als gebruiker kan de div elementen aanpassen. Deze waren: gravity en updateSpeed. Hiermee kon je doorgeven hoe snel je de elementen wil laten bewegen, en hoe sterk de zwaartekracht moet zijn.
 
-## Installation
+```javascript
 
-Just download bounce.js, put it in the head of your page and call it. Make sure the parent of the targeted element has a hight otherwise there's not much room to bounce
+<script>
+    //hierin worden de elementen gekoppeld aan de javascript functies
 
-## API Reference
+    var bounce1 = new Bounce();
+    bounce1.init('bounce1', {gravity: 5, updateSpeed: 15});
+    
+</script>
+```
 
-### init
+Hierboven wordt de gravity: 5 en updateSpeed: 15 toegevoegd. Je kunt de gravity en speed aanpassen door andere waarde te geven om een andere resultaat te krijgen.
 
-| Parameters    | Type          | Optional | Description                                                |
-|:-------------:|:-------------:|:--------:| ---------------------------------------------------------- |
-| selector      | string        | true     | Css selector that targets the element that needs to bounce |
-| settings      | object        | true     | Object containing settings `gravity` and/or `updateSpeed`  |
+## Nieuwe functies
+
+Amer en Thien hebben de originele demo aangepast door nieuwe functies te geven aan bestaande js file. Deze zij als volgt: 
+
+- width , met deze functie wordt de breedte van elementen bepaald.
+- height, met deze functie wordt de hoogte van elementen bepaald.
+- moveX, met deze fucntie wordt de richting van element in X as aangegeven.
+- borderRadius, met deze functie wordt de rondheid van element bepaald.
+- backgrounColor, met deze functie wordt de achtergrond kleur van element bepaald.
+
+Voorbeeld code van nieuwe toepassing:
+
+```javascript
+
+<script>
+    //hierin worden de elementen gekoppeld aan de javascript functies
+
+    var bounce1 = new Bounce();
+    bounce1.init('bounce1', {gravity: 5, updateSpeed: 15, width: '500px', height: '200px', moveX: 4, borderRadius: '12px', backgroundColor: 'yellow'});
+    
+</script>
+```
+
+Hiermee krijg je je element sneller, die bounct hoger en die is best breed maar niet al te hoog. Die gaat van plek veranderen, met een rondere borders en een geele achtergrondkleur. Je kan natuurlijk die aanpassen volgens je smaak, en sommige dingen mag je ook achterlaten - dan worden de standard waarden vanuis js file toegepast.
