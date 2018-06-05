@@ -11,12 +11,12 @@ var Bounce = function(selector, settings) {
     var defaultSettings = {
         selector: '.bounce',
         gravity: 9.81,
+        moveX: 0,
+        borderRadius:'10px',
         width: '100px',
         height: '100px',
         backgroundColor: 'red',
         updateSpeed: 1 //In milliseconds
-        
-        
     };
 
     /**
@@ -30,6 +30,12 @@ var Bounce = function(selector, settings) {
      * @type {number}
      */
     var speedY;
+
+    /**
+     * The vertical speed
+     * @type {number}
+     */
+    var speedX;
 
     /**
      * The timer that updates the model and the screen
@@ -54,6 +60,10 @@ var Bounce = function(selector, settings) {
         element.style.marginTop = position.y + 'px';
     };
 
+    var beweegX = function() {
+
+    };
+
     /**
      * Moves changes the x and the y
      * @param {number} xChange
@@ -69,6 +79,10 @@ var Bounce = function(selector, settings) {
             speedY = -speedY;
         }
 
+        if(element.parentElement.clientWidth <= position.x + element.clientWidth) {
+            speedX = -speedX;
+        }
+
         updateElement();
     };
 
@@ -76,8 +90,9 @@ var Bounce = function(selector, settings) {
      * Update the variables to the new reality
      */
     var update = function() {
-        move(0, speedY);
+        move(speedX, speedY);
         speedY += defaultSettings.gravity * (defaultSettings.updateSpeed/1000);
+        speedX += defaultSettings.moveX * (defaultSettings.updateSpeed/1000);
     };
 
     /**
@@ -113,6 +128,9 @@ var Bounce = function(selector, settings) {
         element.style.backgroundColor = _newBackgroundColor;
     }
 
+    var changeBorderRadius = function(_newBorderRadius) {
+        element.style.borderRadius = _newBorderRadius;
+    }
     /**
      * Initializes the module
      * @param {string} [selector] Css selector that targets the element that needs to bounce
@@ -123,6 +141,8 @@ var Bounce = function(selector, settings) {
         selector = selector || defaultSettings.selector;
         element = document.querySelector(selector);
         speedY = 0;
+        speedX = 0;
+        changeBorderRadius(defaultSettings.borderRadius);
         changeWidth(defaultSettings.width);
         changeHeight(defaultSettings.height);
         changeBackground(defaultSettings.backgroundColor);
