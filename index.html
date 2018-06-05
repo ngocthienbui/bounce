@@ -10,22 +10,24 @@
 <body>
     <div class="box">
         <div class="bounce">
-            Example
+            <img src="http://freedesignfile.com/upload/2017/08/alien-icon-vector.png" width="90px" height="90px">
         </div>
         <div class="bounce2">
-            Example2
+            <img src="http://freedesignfile.com/upload/2017/08/alien-icon-vector.png" width="90px" height="90px">
+
         </div>
         <div class="bounce3">
-            Example3
+            <img src="http://freedesignfile.com/upload/2017/08/alien-icon-vector.png" width="90px" height="90px">
+
         </div>
     </div>
     <script>
         var bounce = new Bounce();
         bounce.init();
         var  bounce2 = new Bounce();
-        bounce2.init('.bounce2', {gravity: 2, moveX: 2, borderRadius: '30px'});
+        bounce2.init('.bounce2', {gravity: 2, moveX: 2, borderRadius: '30px', backgroundColor: 'yellow', widht: '250px', height: '120px'});
         var  bounce3 = new Bounce();
-        bounce3.init('.bounce3', {gravity: 4, moveX: 4, borderRadius: '50px'});
+        bounce3.init('.bounce3', {gravity: 4, moveX: 8, borderRadius: '50px', backgroundColor: 'green', widht: '350px', height: '210px'});
 
 
         function optellen(getal1, getal2) {

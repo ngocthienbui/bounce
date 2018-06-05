@@ -72,4 +72,4 @@ Voorbeeld code van nieuwe toepassing:
 </script>
 ```
 
-Hiermee krijg je je element sneller, die bounct hoger en die is best breed maar niet al te hoog. Die gaat van plek veranderen, met een rondere borders en een geele achtergrondkleur. Je kan natuurlijk die aanpassen volgens je smaak, en sommige dingen mag je ook achterlaten - dan worden de standard waarden vanuis js file toegepast.
+Hierdoor reageert de element sneller, ze springen hoger en ze zijn best breed maar niet al te hoog. Ze bewegen van links naar rechts en omhoog en omlaag.Er komen rondere borders en gele achtergrondkleur. Je kan natuurlijk je elementen aanpassen volgens je smaak, en sommige dingen mag je ook achterlaten - dan worden de standaard waarden vanuit js file toegepast.
