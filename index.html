@@ -14,12 +14,17 @@
         <div class="bounce2">
             Example2
         </div>
+        <div class="bounce3">
+            Example3
+        </div>
     </div>
     <script>
         var bounce = new Bounce();
         bounce.init();
         var  bounce2 = new Bounce();
-        bounce2.init('.bounce2', {gravity: 5});
+        bounce2.init('.bounce2', {gravity: 2, moveX: 2, borderRadius: '30px'});
+        var  bounce3 = new Bounce();
+        bounce3.init('.bounce3', {gravity: 4, moveX: 4, borderRadius: '50px'});
 
 
         function optellen(getal1, getal2) {
