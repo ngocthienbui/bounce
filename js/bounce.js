@@ -12,7 +12,9 @@ var Bounce = function(selector, settings) {
         selector: '.bounce',
         gravity: 9.81,
         moveX: 0,
+        borderRadius:'10px',
         updateSpeed: 1 //In milliseconds
+
     };
 
     /**
@@ -104,6 +106,9 @@ var Bounce = function(selector, settings) {
         }
     };
 
+    var changeBorderRadius = function(_newBorderRadius) {
+        element.style.borderRadius = _newBorderRadius;
+    }
     /**
      * Initializes the module
      * @param {string} [selector] Css selector that targets the element that needs to bounce
@@ -115,6 +120,7 @@ var Bounce = function(selector, settings) {
         element = document.querySelector(selector);
         speedY = 0;
         speedX = 0;
+        changeBorderRadius(defaultSettings.borderRadius);
         timer = setInterval(update, defaultSettings.updateSpeed);
     };
 
