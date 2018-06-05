@@ -1,5 +1,5 @@
 # bounce
-Simple demonstration of how you can setup a JavaScript library
+Simple demonstrations of how you can setup a JavaScript library
 ## Synopsis
 
 A small library that can make a an element of your choosing bounce
