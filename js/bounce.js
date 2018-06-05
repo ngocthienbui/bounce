@@ -11,7 +11,8 @@ var Bounce = function(selector, settings) {
     var defaultSettings = {
         selector: '.bounce',
         gravity: 9.81,
-        width: '50px',
+        width: '100px',
+        height: '100px',
         updateSpeed: 1 //In milliseconds
         
         
@@ -99,6 +100,13 @@ var Bounce = function(selector, settings) {
        
     }
 
+    var changeHeight= function(_newHeight) {
+
+        element.style.height = _newHeight;
+        
+       
+    }
+
     /**
      * Initializes the module
      * @param {string} [selector] Css selector that targets the element that needs to bounce
@@ -110,6 +118,7 @@ var Bounce = function(selector, settings) {
         element = document.querySelector(selector);
         speedY = 0;
         changeWidth(defaultSettings.width);
+        changeHeight(defaultSettings.height);
         timer = setInterval(update, defaultSettings.updateSpeed);
     };
 
